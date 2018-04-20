@@ -1,5 +1,5 @@
 from microbit import *
-#ScienceOxford 
+#Credit to ScienceOxford 
 
 on = 511
 off = 1023
