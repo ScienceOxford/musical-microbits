@@ -1,4 +1,4 @@
-# Microbit
+# microbit
 
 
 Developed by ScienceOxford for educational purposes. Please give credit where applicable to www.scienceoxford.com
