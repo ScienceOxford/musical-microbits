@@ -1,5 +1,8 @@
 from microbit import *
-#Credit to ScienceOxford 
+
+# Please tag us if used!
+# We'd love to see what you make:
+# @ScienceOxford
 
 on = 511
 off = 1023
