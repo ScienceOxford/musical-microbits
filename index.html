@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shake It Out</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>CCC - Shake It Out</h1>
+  </header>
+
+  <div id="intro">
+    <p>Resources for the 'Shake It Out' Creative Computing Club.</p>
+    <p>During this workshop, you will create a micro:bit musical instrument!</p>
+    <br>
+  </div>
+
+  <div id="starter" class="left">
+    <h3>Getting started</h3>
+    <p>If you are attending this face-to-face workshop, go to <a href="https://classroom.microbit.org/joinactivity" target="_blank">micro:bit classroom</a> and enter the classroom name and PIN to join in.</p>
+    <p>If you want to try again at home, download <a href=".\2020-code-examples\Shake-It-Out_Starter-Code.hex" target="_blank">the starter code</a>, go to <a href="https://makecode.microbit.org/" target="_blank">the editor</a>, and drag-and-drop the starter code into the window. If you do not have a speaker for your micro:bit, you can use the emulator.</p>
+    <p>Follow the instructions to <a href="https://scienceoxford.github.io/do-your-bit/pair-microbit.html" target="_blank">pair your micro:bit</a> and create your first program!</p>
+    <img src=".\images\instructions-postit.PNG" alt="Instructions-- Step 1: Pair your microbit. Step 2: Put the code on your micro:bit. Step 3: Experiment with the code blocks on the right. Step 4: Experiment with new blocks from the menu on the left." width="1000px" height="auto">
+    <p>When you are ready, connect your speaker to your micro:bit so you can hear your musical notes:</p>
+    <ul>
+      <li>Connect one crocodile clip to the hole on the micro:bit labelled <strong>0</strong></li>
+      <li>Connect the other crocodile clip to the hole on the micro:bit labelled <strong>GND</strong></li>
+    </ul>
+    <img src="https://scienceoxford.github.io/ElecKit/images/SPEAKER_wiring.JPG" alt="Photograph of a micro:bit with crocodile clips attached to 0 and GND." width="1000px" height="auto">
+    <br>
+    <br>
+  </div>
+
+  <div id="accelerometer" class="left">
+    <h3>Using the accelerometer</h3>
+    <p>The accelerometer is built into the micro:bit. It can tell whether is the micro:bit is moving, and whether it is facing up or down.</p>
+    <p>It can return a <strong>gesture</strong> - whether the micro:bit is facing up, facing down, being shaken etc. - or <strong>x, y, z</strong> values.</p>
+    <p>Find the accelerometer blocks in the <strong>Inputs</strong> menu, and try making different things happen when you use different gestures.</p>
+    <p><strong>How do you want to use the accelerometer for your musical instrument?</strong></p>
+
+    <img src=".\images\on-vs-if.PNG" alt="Code Comparison-- Left: on 'shake', play tone. Right: forever, if 'is shake gesture' then, play tone" width="1000px" height="auto">
+    <p>These two blocks of code are <em>equivalent</em>.</p>
+    <p>The one on the right makes it easier to build more complex programs.</li>
+
+    <p>As well as your <strong>Inputs</strong>, the blocks you need for this are in the <strong>Logic</strong> menu.</p>
+    <p>As well as the <strong>Conditionals</strong>, you can combine <strong>Comparison</strong> and <strong>Boolean</strong> blocks to make a really interesting program!</p>
+    <p><strong>Try out some different combinations to make an awesome musical instrument!</strong></p>
+    <br>
+  </div>
+
+  <div id="extensions" class="left">
+    <h3>What next?</h3>
+    <p>Get creative and add different features to your micro:bit.</p>
+    <p>The links below will help you with a couple of our ideas!</p>
+  </div>
+
+  <nav class="links bg_green">
+    <a href="radio.html" target="_blank">send your tunes to the micro:bit at the front</a>
+    <a href="wearable.html" target="_blank">make your instrument wearable</a>
+  </nav>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/musical-microbits" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+
+</html>
