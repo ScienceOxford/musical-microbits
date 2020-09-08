@@ -1,6 +1,6 @@
 # musical-microbits
 
-Files for the 1.5h Creative Computing Club sessions, Shake It Up (2020) & Musical Microbits (2018)
+Files for the 1.5h Creative Computing Club sessions, Shake It Out (2020) & Musical Microbits (2018)
 
 *Developed by [ScienceOxford](https://scienceoxford.com) for educational purposes. Please give credit where applicable.
 <br>We love seeing what you've created, so tag us when you share! [@ScienceOxford](https://twitter.com/scienceoxford)*
