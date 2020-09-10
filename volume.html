@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shake It Out</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Adding volume control to your instrument</h1>
+  </header>
+
+  <div id="intro" class="left">
+    <p>You can use the volume block in the <strong>Music</strong> menu to set the volume.</p>
+    <p>By creating a <strong>variable</strong> to keep track of the current volume, you can add the ability to control it!</p>
+    <p>The instructions below will help you to use the micro:bit's buttons to control the volume.</p>
+    <br>
+  </div>
+
+  <div id="set-up" class="left">
+    <h3>Set the starting volume</h3>
+    <p>Take a look in the <strong>Music</strong> menu, at the <strong>volume</strong> block.</p>
+    <p>The value given in this block is <code>127</code>, which is in the middle of the range.</p>
+    <br>
+    <p>Click the <strong>Variables</strong> menu, and <strong>Make a Variable</strong>.</p>
+    <p>Give it a name, for example <strong>sound</strong>.</p>
+    <p>Now, in the <strong>Variables</strong> menu, you should see a round block with the name of your variable.</p>
+    <br>
+    <p>You can now combine these blocks, so that the volume will always be set to the sound you want, even when you change it.</p>
+    <p>Use an <strong>on start</strong> block, a new <strong>forever</strong> block, your new <strong>variable</strong>, and the <strong>volume</strong> block. See the example code below.</p>
+    <p><strong>This will set up the volume, ready for you to start controlling it.</strong></p>
+    <img src=".\images\sound-variable.PNG" alt="Code example-- Left: on start, set sound to 127; Right: forever, set volume sound" width="600px" height="auto">
+    <p><strong>Check that your program still works before moving on to the next step!</strong></p>
+    <br>
+  </div>
+
+  <div id="adjust" class="left">
+    <h3>Adjust the volume with a button press</h3>
+    <p>The new <strong>forever</strong> block you started in the last step tells the micro:bit to set the volume.</p>
+    <p>Underneath this block, but still inside the <strong>forever</strong> loop, connect an <strong>if-then</strong> block, the same as you used when setting up the accelerometer.</p>
+    <p>Use the <strong>Inputs</strong> menu to set options for each button press.</p>
+    <img src=".\images\if-button-press.PNG" alt="Code example-- forever, set volume sound, if button A is pressed then, else if button B is pressed then" width="600px" height="auto">
+    <p>Next, use the <strong>Variables</strong> menu to fill in the gaps - there is a block called <strong>change sound by</strong>.</p>
+    <p>What value do you want to change the sound by?</p>
+    <p>Remember that at the start of the program it is <code>127</code>. The lowest you can go is <code>0</code>, which would be off. The loudest you can go is <code>255</code>.</p>
+    <br>
+  </div>
+
+  <div id="next" class="left">
+    <h3>What next?</h3>
+    <ul>
+      <li>What happens if you lower the sound below <code>0</code>, or make it louder than the maximum? Could you give your instrument's player some information to let them know?</li>
+      <li>Could you use some other <strong>Inputs</strong> as a quick way to mute the instrument, or turn it up to maximum volume?</li>
+      <li>Can you think of any other ways to use volume in your project?</li>
+    </ul>
+    <br>
+  </div>
+
+  <nav class="links bg_green">
+    <a href="index.html">Go Back</a>
+  </nav>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/musical-microbits" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+</html>
