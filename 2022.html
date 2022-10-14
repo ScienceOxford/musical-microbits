@@ -18,20 +18,19 @@
     <p>Resources for the 'Musical Microbits' Creative Computing Club.</p>
     <p>During this workshop, you will create a musical instrument by coding a micro:bit to bang, rattle or ring an object.</p>
     <p>This page recaps what <a href="https://bit.ly/Oct22CCC" target="_blank">we discussed as a group</a>.</p>
-    <p>To skip to the examples and ideas, <a href="#extensions">click here</a>.</p>
     <br>
   </div>
 
   <div id="starter" class="left">
     <h3>Python Editor</h3>
     <p>Open the new Python editor by visiting <a href="https://python.microbit.org/" target="_blank">python.microbit.org/</a>. Your screen will look something like this:</p>
-    <img src="" alt="screenshot of the Python editor screen" width="800px" height="auto">
+    <img src=".\images\python-editor.PNG" alt="screenshot of the Python editor screen" width="800px" height="auto">
     <br>
     <ul>
       <li>In the middle is where you will add your own code.</li>
       <li>On the left-hand-side is the reference menu - you can see examples of some of the code here, as well as help understanding these examples.</li>
       <li>On the right-hand-side is the simulator - a pretend micro:bit you can use to test your code.</li>
-      <li>On the bottom is the Send to Micro:bit button.</li>
+      <li>On the bottom is the Send to Micro:bit button, which you will use to send code to your physical micro:bit.</li>
     </ul>
     <br>
     <p>Edit the code on the screen, then flash it to your micro:bit to see the changes.</p>
@@ -44,33 +43,106 @@
     <br>
   </div>
 
+  <div id="buttons" class="left">
+    <h3>Using a button as an input</h3>
+    <p>Currently, your code runs forever. The micro:bit accepts <strong>inputs</strong> - for example, you can choose to run code only when you press the micro:bit's A button.</p>
+    <p>Find the <strong>Buttons</strong> section of the <strong>Reference</strong> menu.</p>
+    <p>Drag-and-drop the<code> if button_a.was_pressed(): </code> example into your code, so that it looks like this:</p>
+    <pre>while True:
+    if button_a.was_pressed():
+        display.scroll('A')
+    display.show(Image.HEART)</pre>
+    <br>
+    <p>Try running your code in the simulator. What should happen is:</p>
+    <ul>
+        <li>If you press the A button, the letter 'A' scrolls across the display</li>
+        <li>Otherwise, your original code continues to run (forever)</li>
+    </ul>
+    <br>
+    <p><strong>Indentation</strong> is very important - this is the gap on the left in the code. It determines when sections of code are run.</p>
+    <p>To make <strong>all</strong> of the code run when you press button A, and nothing to happen if you don't, edit the <strong>indentation</strong>, to make your code look like this:</p>
+    <pre>while True:
+    if button_a.was_pressed():
+        display.scroll('A')
+        display.show(Image.HEART)</pre>
+    <br>
+    <p>All of your code should line up neatly.</p>
+    <p>Does your code work the way you expect?</p>
+    <p class=debugging><strong>Challenge</strong>: can you make something different happen if you press button B?</p>
+    <br>
+  </div>
+
+
   <div id="waving" class="left">
     <h3>Using a servo motor</h3>
-    <p>- get the micro:bit to wave</p>
-    <p>- try different angles</p>
-    <p>- EXTENSION randomising the time (using a variable)</p>
+    <p>You have added <strong>inputs</strong>, to control when your code will run. Now you are going to add a new <strong>output</strong> - a motor.</p>
+    <p>Edit your code, so that it looks like this:</p>
+    <pre>while True:
+    if button_a.was_pressed():
+        pin1.write_analog(35)
+        sleep(1000)
+        pin1.write_analog(85)
+        sleep(1000)</pre>
+    <br>
+    <p><em>You can keep your original code in there as well if you like, but be careful of the <strong>indentation</strong>, and think about the <strong>order</strong> your code will run in.</em></p>
+    <p>What this new code does, is send a signal to <strong>pin1</strong> of your micro:bit - one of the gold teeth on the bottom.</p>
+    <ul>
+        <li>Give pin1 a value of 35</li>
+        <li>Wait for 1 second</li>
+        <li>Give pin1 a new value of 85</li>
+        <li>Wait for 1 second</li>
+    </ul>
+    <br>
+    <p>Connect your motor to the micro:bit, using the picture and description below, and see if your code works. Does your micro:bit wave to you?</p>
+    <img src=".\images\servo-wiring.PNG" alt="photograph of a BBC micro:bit. A crocodile clip with a white wire is attached to the gold pin labelled 1, second from the left. A crocodile clip with a black wire is attached to gold pin labelled GND, furthest right." width="800px" height="auto">
+    <br>
+    <ul>
+        <li>Attach the <strong>white</strong> crocodile clip to pin1</li>
+        <li>Attach the <strong>black</strong> crocodile clip to GND</li>
+    </ul>
+    <p><em>For more details about this circuit, <a href="wiring.html" target="_blank">click here</a>.</em></p>
+    <br>
+    <p class="debugging"><strong>Challenge</strong>: You can make this code more efficient by using <strong>variables</strong>. Try setting a<code> tempo </code> variable, and using this inside<code> sleep</code>. You could even extend this further by letting the micro:bit randomly choose the tempo for you! For some help to implement this challenge, <a href="variables.html" target="_blank">click here</a>.</p>
     <br>
   </div>
 
   <div id="sounds" class="left">
     <h3>Using the speaker</h3>
-    <p>- playing musical notes</p>
-    <p>- timing it with the servo motor</p>
-    <p>- EXTENSION designing a tune (using a list)</p>
+    <p>Now we will add musical notes into the program - to start with, we'll time the notes to play whenever the servo motor moves.</p>
+    <p>Firstly, add this line <strong>above your<code> while True </code> loop</strong>:</p>
+    <pre>import music</pre>
+    <br>
+    <p>This line is needed to use the music note code.</p>
+    <p>Use this syntax to add a musical note:</p>
+    <pre>music.play('c')</pre>
+    <br>
+    <p>To add a 'C' when the servo moves one way, and a 'D' when it moves the other, the code would look like this:</p>
+    <pre>while True:
+    if button_a.was_pressed():
+        pin1.write_analog(35)
+        music.play('c')
+        sleep(1000)
+        pin1.write_analog(85)
+        music.play('d')
+        sleep(1000)</pre>
+    <br>
+    <p class=debugging><strong>Challenge</strong>: to expand on this code, take a look in the <strong>Sounds</strong> section of the <strong>Reference</strong> menu. Could you make a <strong>list</strong> of notes to make a whole tune?</p>
     <br>
   </div>
 
   <div id="instruments" class="left">
     <h3>Adding an intrument</h3>
-    <p>- choosing an instrument, working out how to 'play' it</p>
-    <p>- perfecting your servo timing, angle and physical location</p>
-    <p>- EXTENSION working with other people to make an orchestra</p>
+    <p>Now add a physical instrument for your servo motor to hit!</p>
+    <img src=".\images\servo-instruments.gif" alt="animated photo showing a servo motor ringing a windchime, the structure is make out of K'nex and the motor is secured with blue tack" width="800px" height="auto">
     <br>
-  </div>
-
-  <div id="extensions" class="left">
-    <h3>What next?</h3>
-    <p></p>
+    <br>
+    <p>To get your project working you will need to:</p>
+    <ul>
+        <li>Choose or create a physical instrument.</li>
+        <li>Set the servo motor angles to get the best hit.</li>
+        <li>Secure the motor and the instrument, so you can play it consistently.</li>
+    </ul>
+    <p class=debugging><strong>Challenge</strong>: Can you work with someone else to make an orchestra? Discuss your timings to make a good tune!</p>
     <br>
   </div>
 
