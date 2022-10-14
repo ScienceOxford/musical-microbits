@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Musical Microbits - Using Variables</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Using variables to control the tempo</h1>
+  </header>
+
+  <div id="variable" class="left">
+    <h3>Creating and using a variable</h3>
+    <p>Instead of manually setting a value for each<code> sleep </code>code>, you can set a tempo <strong>variable</strong>, allowing you to use code to change the value.</p>
+    <p>Set your new variable <strong>before<code> while True </code>to make sure it doesn't reset it every time:</strong></p>
+    <pre>tempo = 1000</pre>
+    <br>
+    <p>Inside your loop, change the value inside<code> sleep </code>:</p>
+    <pre>sleep(tempo)</pre>
+    <br>
+    <p>The full code will look like this:</p>
+    <pre>tempo = 1000
+while True:
+    if button_a.was_pressed():
+        pin1.write_analog(35)
+        sleep(tempo)
+        pin1.write_analog(85)
+        sleep(tempo)</pre>
+    <br>
+  </div>
+
+  <div id="random" class="left">
+    <h3>Adding random</h3>
+    <p>Now you are set up, you can start having fun with your tempo variable.</p>
+    <p>One thing to try, is getting the micro:bit to choose the tempo for you, randomly.</p>
+    <p>Add the following line to your code, above<code> while True</code>:</p>
+    <pre>from random import randint</pre>
+    <br>
+    <p>To choose a new tempo every loop, add a new line of code after your if statement:</p>
+    <pre>tempo = randint(100, 5000)</pre>
+    <br>
+    <p>The first number is the minimum number it can choose, and the second is the maximum.</p>
+    <br>
+    <p>The full code will look like this:</p>
+    <pre>from random import randint
+while True:
+    if button_a.was_pressed():
+        tempo = randint(100, 5000)
+        pin1.write_analog(35)
+        sleep(tempo)
+        pin1.write_analog(85)
+        sleep(tempo)</pre>
+    <br>
+    <p><strong>What other ways can you think of to change the tempo?</strong></p>
+  </div>
+
+  <nav class="links bg_green">
+    <a href="2022.html">Go Back</a>
+  </nav>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/musical-microbits" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+</html>
