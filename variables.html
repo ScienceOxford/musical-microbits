@@ -11,52 +11,77 @@
 <body>
   <header>
     <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
-    <h1>Using variables to control the tempo</h1>
+    <h1>Using variables to control the servo</h1>
+    <br>
   </header>
 
   <div id="variable" class="left">
     <h3>Creating and using a variable</h3>
-    <p>Instead of manually setting a value for each<code> sleep </code>code>, you can set a tempo <strong>variable</strong>, allowing you to use code to change the value.</p>
+    <p>Instead of manually setting a value for each<code> sleep </code>, you can set a speed <strong>variable</strong>, allowing you to use code to change the value.</p>
     <p>Set your new variable <strong>before<code> while True </code>to make sure it doesn't reset it every time:</strong></p>
-    <pre>tempo = 1000</pre>
+    <pre>speed = 1000</pre>
     <br>
     <p>Inside your loop, change the value inside<code> sleep </code>:</p>
-    <pre>sleep(tempo)</pre>
+    <pre>sleep(speed)</pre>
     <br>
     <p>The full code will look like this:</p>
-    <pre>tempo = 1000
+    <pre>speed = 1000
 while True:
     if button_a.was_pressed():
         pin1.write_analog(35)
-        sleep(tempo)
+        sleep(speed)
         pin1.write_analog(85)
-        sleep(tempo)</pre>
+        sleep(speed)</pre>
+    <br>
+  </div>
+
+  <div id="position" class="left">
+    <h3>Adding more variables</h3>
+    <p>You can add more variables, to control the position of the servo. By using a variable for this, you can change the values in other parts of your code.</p>
+    <pre>speed = 1000
+position1 = 35
+position 2 = 85
+while True:
+    if button_a.was_pressed():
+        pin1.write_analog(position1)
+        sleep(speed)
+        pin1.write_analog(position2)
+        sleep(speed)</pre>
     <br>
   </div>
 
   <div id="random" class="left">
     <h3>Adding random</h3>
-    <p>Now you are set up, you can start having fun with your tempo variable.</p>
-    <p>One thing to try, is getting the micro:bit to choose the tempo for you, randomly.</p>
+    <p>Now you are set up, you can start having fun with your variables.</p>
+    <p>One thing to try, is getting the micro:bit to choose the speed for you, randomly.</p>
     <p>Add the following line to your code, above<code> while True</code>:</p>
     <pre>from random import randint</pre>
     <br>
-    <p>To choose a new tempo every loop, add a new line of code after your if statement:</p>
-    <pre>tempo = randint(100, 5000)</pre>
+    <p>To choose a new speed every loop, add a new line of code after your if statement:</p>
+    <pre>speed = randint(500, 5000)</pre>
     <br>
     <p>The first number is the minimum number it can choose, and the second is the maximum.</p>
     <br>
     <p>The full code will look like this:</p>
     <pre>from random import randint
+position1 = 35
+position 2 = 85
 while True:
     if button_a.was_pressed():
-        tempo = randint(100, 5000)
-        pin1.write_analog(35)
-        sleep(tempo)
-        pin1.write_analog(85)
-        sleep(tempo)</pre>
+        speed = randint(500, 5000)
+        pin1.write_analog(position1)
+        sleep(speed)
+        pin1.write_analog(position2)
+        sleep(speed)</pre>
     <br>
-    <p><strong>What other ways can you think of to change the tempo?</strong></p>
+    <p><strong>What other ways can you think of to change the variables?</strong></p>
+    <br>
+    <p>Some <strong>Python syntax</strong> for using variables is listed below, to help you once you decide where and how you want to change the variables.</p>
+    <ul>
+      <li><code>speed += 100 </code> - this will add 100 to the speed</li>
+      <li><code>position1 -= 5 </code> - this will minus 5 from position1</li>
+      <li><code>if position1 > 30: </code> - this asks, is position1 <strong>greater than</strong> 30?</li>
+    </ul>
   </div>
 
   <nav class="links bg_green">
