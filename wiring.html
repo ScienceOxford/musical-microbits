@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Musical Microbits - Wiring Explanation</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src=".\images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>How the servo is wired up</h1>
+    <br>
+  </header>
+
+  <div id="why" class="left">
+    <h3>Why so many wires?</h3>
+    <p>A micro:bit does not provide enough power for a servo motor - we need to give the motor an extra battery pack.</p>
+    <p>To stop weird things from happening, the negatives wire all need to be connected together:</p>
+    <ul>
+      <li>The battery pack's black wire.</li>
+      <li>The servo motor's brown wire.</li>
+      <li>The micro:bit's GND connection.</li>
+    </ul>
+    <p>To make it easier to connect the micro:bit up, we have added crocodile clips into the circuit.</p>
+    <p>We used a breadboard to connect all the different wires together. To learn how a breadboard works, <a href="https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all" target="_blank">click here</a>.</p>
+    <img src=".\images\servo-wiring-full.jpg" alt="photograph of a BBC micro:bit. A crocodile clip with a white wire is attached to the gold pin labelled 1, second from the left. A crocodile clip with a black wire is attached to gold pin labelled GND, furthest right." width="800px" height="auto">
+    <br>
+    <br>
+  </div>
+
+  <div id="wiring-diagram" class="left">
+    <h3>Wiring diagram</h3>
+    <p>A diagram of the full circuit is embedded below.</p>
+    <ul>
+      <li>The three negative wires are connected together, as described above.</li>
+      <li>The two positive wires are connected together - the red wire from the battery and the red wire from the servo motor.</li>
+      <li>The orange wire of the servo motor is connected to pin 1 on the micro:bit.</li>
+    </ul>
+    <br>
+    <iframe width="725" height="453" src="https://www.tinkercad.com/embed/2x7L1zN4mJ5?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    <br>
+    <br>
+    <p>If you have a Tinkercad account, and would like to experiment with this circuit, you can <a href="https://www.tinkercad.com/things/2x7L1zN4mJ5" target="_blank">find it here</a>.</p>
+    <br>
+  </div>
+
+  <nav class="links bg_green">
+    <a href="2022.html">Go Back</a>
+  </nav>
+
+  <footer class="links">
+    <a href="https://github.com/ScienceOxford/musical-microbits" target="_blank">View on GitHub</a>
+  </footer>
+
+</body>
+</html>
